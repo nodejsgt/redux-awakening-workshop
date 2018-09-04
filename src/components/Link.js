@@ -5,9 +5,10 @@ const Link = ({ active, children, onClick }) => (
     
     <a
         href=""
-        onClick={e => {
-            e.preventDefault()
-            onClick()
+        disabled={active}
+        onClick={onClick}
+        style={{
+            marginLeft: '4px'
         }}
     >
         {children}

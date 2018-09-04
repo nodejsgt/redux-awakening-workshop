@@ -21,4 +21,4 @@ TodoList.propTypes = {
     onTodoClick: PropTypes.func.isRequired
 }
 
-export default TodoList;
+export default TodoList

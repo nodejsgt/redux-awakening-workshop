@@ -29,7 +29,7 @@ export const toggleTodo = id => ({
 })
 
 export const setVisibilityFilter = filter => ({
-    type: SET_VISIBILITI_FILTER,
+    type: SET_VISIBILITY_FILTER,
     filter
 })
 

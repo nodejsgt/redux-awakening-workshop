@@ -1,35 +1,27 @@
 import { connect } from 'react-redux'
-import { toggleTodo } from '../actions'
+import { toggleTodo, VisibilityFilters } from '../actions'
 import TodoList from '../components/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
     switch(filter) {
-        case 'SHOW_ALL':
+        case VisibilityFilters.SHOW_ALL:
             return todos
-        case 'SHOW_COMPLETED':
+        case VisibilityFilters.SHOW_COMPLETED:
             return todos.filter( todo => todo.completed)
-        case 'SHOW_ACTIVE':
+        case VisibilityFilters.SHOW_ACTIVE:
             return todos.filter( todo => !todo.completed)
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        todos: getVisibleTodos(state.todos, state.visibilityFilter)
-    }
-}
+const mapStateToProps = state => {{
+    todos: getVisibleTodos(state.todos, state.visibilityFilters)
+}}
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onTodoClick: id => {
-            dispatch(toggleTodo(id))
-        }
-    }
-}
+const mapDispatchToProps = dispatch => {{
+    onTodoClick: id => dispatch(toggleTodo(id))
+}}
 
-const VisibleTodoList = connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(TodoList)
-
-export default VisibleTodoList

@@ -24,6 +24,8 @@ store.dispatch(addTodo('Learn something about actions'));
 store.dispatch(addTodo('Learn something about reducers'));
 store.dispatch(addTodo('Learn something about Store'));
 
+unsubscribe()
+
 // ReactDOM.render(
 //   <Provider store={store}>
 //     <App />
